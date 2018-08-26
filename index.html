@@ -4,38 +4,56 @@
 		<link href="css/style.css" rel="stylesheet" media="screen">
     <script>
       window.onload = function(){
-	
+		//console.log(window.geemails) 
 		
-    
-		
-		
-		
-	   
-        // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
+          for (var i=0; i<window.geemails.length; i++){
+			var messageBox = document.createElement("div");
+                messageBox.className = "message";
+                main.appendChild(messageBox);    
+
+            var senderBox = document.createElement("ul");
+            senderBox.className = "sender";
+            senderBox.innerHTML = window.geemails[i].sender;
+            messageBox.appendChild(senderBox);
+
+            var subjectBox = document.createElement("ul");
+            subjectBox.className = "subject";
+            subjectBox.innerHTML = window.geemails[i].subject;
+            senderBox.appendChild(subjectBox);
+
+            var dateBox = document.createElement("ul");
+            dateBox.className = "date";
+            dateBox.innerHTML = window.geemails[i].date;
+			senderBox.appendChild(dateBox);
+
+			var bodyBox = document.createElement('ul');
+			bodyBox.className = "body";
+			bodyBox.innerHTML = window.geemails[i].body;
+			senderBox.appendChild(bodyBox)
+			}
+
+			var count = document.getElementById('count');
+		        count.innerHTML = window.geemails.length;
+		 
+
+
+		// ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
 				// We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser			
-				
-				
-				
-		
-	  
-	  } 
+}		  
 	  
     </script>
 	</head>
 	<body>
+	   <h1>GeeMails</h1>
+	   <h2 id="count"></h2>
+
+
+
+
+
 		 <div class="container" id="main">
 		
 		</div>
-
-		<h1 class="title">Gee Mail</h1>
-		<h2 class = "inbox">Messages</h2>
-		<h3 class="currentCount">count</h3>
-		<div class="info">
-			<button class="clickMe">Get Messages</button>
-			<ul id="date">Date:</ul>
-			<ul id="subject">Subject:</ul>
-			<ul id="sender">Sender:</ul>
-			<ul id="body">Body:</ul>
 
 
 
