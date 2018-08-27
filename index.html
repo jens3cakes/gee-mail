@@ -8,32 +8,34 @@
 		
           for (var i=0; i<window.geemails.length; i++){
 			var messageBox = document.createElement("div");
-                messageBox.className = "message";
+				messageBox.className = "message";
                 main.appendChild(messageBox);    
 
             var senderBox = document.createElement("ul");
             senderBox.className = "sender";
-            senderBox.innerHTML = window.geemails[i].sender;
+            senderBox.innerHTML = "Sender: " + window.geemails[i].sender;
             messageBox.appendChild(senderBox);
 
             var subjectBox = document.createElement("ul");
             subjectBox.className = "subject";
-            subjectBox.innerHTML = window.geemails[i].subject;
+            subjectBox.innerHTML = "Subject: " + window.geemails[i].subject;
             senderBox.appendChild(subjectBox);
 
             var dateBox = document.createElement("ul");
             dateBox.className = "date";
-            dateBox.innerHTML = window.geemails[i].date;
+            dateBox.innerHTML = "Date: " + window.geemails[i].date;
 			senderBox.appendChild(dateBox);
 
 			var bodyBox = document.createElement('ul');
 			bodyBox.className = "body";
-			bodyBox.innerHTML = window.geemails[i].body;
+			bodyBox.innerHTML = "Body: " + window.geemails[i].body
 			senderBox.appendChild(bodyBox)
 			}
-
-			var count = document.getElementById('count');
-		        count.innerHTML = window.geemails.length;
+                var count = document.getElementById('count');
+		        count.innerHTML = "GeeMails: "+window.geemails.length;
+		 
+				
+		 
 		 
 
 
@@ -46,8 +48,7 @@
 	<body>
 	   <h1>GeeMails</h1>
 	   <h2 id="count"></h2>
-
-
+       <button id = 'newMessage' onclick("window.getNewMessage()")>New Messages</button>
 
 
 
