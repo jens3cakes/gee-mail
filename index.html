@@ -26,29 +26,40 @@
             dateBox.innerHTML = "Date: " + window.geemails[i].date;
 			senderBox.appendChild(dateBox);
 
-			var bodyBox = document.createElement('ul');
-			bodyBox.className = "body";
-			bodyBox.innerHTML = "Body: " + window.geemails[i].body
+			var bodyBox = document.createElement('button');
+			bodyBox.className = "messageBody";
+			bodyBox.addEventListener('click',getMail);
+			bodyBox.innerHTML="Message";
 			senderBox.appendChild(bodyBox)
+			function getMail(){
+			document.getElementsByClassName('messageBody').innerHTML=window.geemails[i].body;
 			}
-                var count = document.getElementById('count');
+
+		  }
+
+					
+               var count = document.getElementById('count');
 		        count.innerHTML = "GeeMails: "+window.geemails.length;
-		 
-				
+
+				var messageInterval = document.getElementById("newMessage");
+				messageInterval.addEventListener('click',myFunction);
+				function myFunction(){
+				setInterval(window.getNewMessage,1000);
+				}
 		 
 		 
 
 
 		// ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
 				// We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser			
-}		  
 	  
+			} 
     </script>
 	</head>
 	<body>
 	   <h1>GeeMails</h1>
 	   <h2 id="count"></h2>
-       <button id = 'newMessage' onclick("window.getNewMessage()")>New Messages</button>
+       <button id = 'newMessage'>New Messages</button>
 
 
 
