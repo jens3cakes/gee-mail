@@ -28,17 +28,22 @@
 
 			var bodyBox = document.createElement('button');
 			bodyBox.className = "messageBody";
-			bodyBox.addEventListener('click',getMail);
-			bodyBox.innerHTML="Message";
+			bodyBox.innerHTML="Message" //+ //window.geemails[i].body;
 			senderBox.appendChild(bodyBox)
-			function getMail(){
-			document.getElementsByClassName('messageBody').innerHTML=window.geemails[i].body;
-			}
-
-		  }
-
-					
-               var count = document.getElementById('count');
+             
+			 var makeButton = document.getElementsByClassName("messageBody");
+			 makeButton[0].addEventListener('click',showMessage);
+			 //console.log(makeButton);
+			 
+			 function showMessage(){
+				
+				return makeButton = window.geemails[i].body;	
+				
+			 }	
+		  }		
+				
+			 
+			 var count = document.getElementById('count');
 		        count.innerHTML = "GeeMails: "+window.geemails.length;
 
 				var messageInterval = document.getElementById("newMessage");
