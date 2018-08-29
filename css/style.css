@@ -20,7 +20,7 @@ h2 {
     font-size: 16px;
     border-color: black;
 }
-#messageBody {
+.innerMessage {
 display: none;
-
+color: green;
 }
