@@ -6,24 +6,24 @@
       window.onload = function(){
 		//console.log(window.geemails) 
 		function readEmail(items){
-          for (var i=0; i<window.geemails.length; i++){
+          for (var i=0; i<items.length; i++){
 			var messageBox = document.createElement("div");
 				messageBox.className = "message";
                 main.appendChild(messageBox);    
 
             var senderBox = document.createElement("ul");
             senderBox.className = "sender";
-            senderBox.innerHTML = "Sender: " + window.geemails[i].sender;
+            senderBox.innerHTML = "Sender: " + items[i].sender;
             messageBox.appendChild(senderBox);
 
             var subjectBox = document.createElement("ul");
             subjectBox.className = "subject";
-            subjectBox.innerHTML = "Subject: " + window.geemails[i].subject;
+            subjectBox.innerHTML = "Subject: " + items[i].subject;
             senderBox.appendChild(subjectBox);
 
             var dateBox = document.createElement("ul");
             dateBox.className = "date";
-            dateBox.innerHTML = "Date: " + window.geemails[i].date;
+            dateBox.innerHTML = "Date: " + items[i].date;
 			senderBox.appendChild(dateBox);
 
 			var bodyBox = document.createElement('button');
@@ -33,13 +33,13 @@
 
 			var messageBox = document.createElement("ul");
 			    messageBox.className='innerMessage'
-			   messageBox.innerHTML=window.geemails[i].body;
+			   messageBox.innerHTML=items[i].body;
 			   bodyBox.appendChild(messageBox);
             
 		  }
 		}
 		readEmail(window.geemails)
-		   
+		 readEmail(getNewMessage())  
 		   var openEmail = document.getElementsByClassName("messageButton");
 		   for (var i = 0; i<openEmail.length;i++){
 			   openEmail[i].addEventListener('click', openFunc);
@@ -47,10 +47,10 @@
 			 
 		   function openFunc(){
 			   var seeMessage = this.querySelectorAll('.innerMessage')[0]
-				 if (seeMessage.style.display === "none"){
-					 seeMessage.style.display = "block";
-				 }else{
+				 if (seeMessage.style.display === "block"){
 					 seeMessage.style.display = "none";
+				 }else{
+					 seeMessage.style.display = "block";
 				 }
 				   
 			   
@@ -60,12 +60,12 @@
 			 var count = document.getElementById('count');
 		        count.innerHTML = "GeeMails: "+window.geemails.length;
 
-				var messageInterval = document.getElementById("newMessage");
-				messageInterval.addEventListener('click',myFunction);
-				function myFunction(){
-				setInterval(window.getNewMessage,1000);
-				}
-		 
+				//var messageInterval = document.getElementById("newMessage");
+				//messageInterval.addEventListener('click',myFunction);
+				//function myFunction(){
+				//setInterval(window.getNewMessage,1000);
+				//}
+		 //console.log(getNewMessage())
 		 
 
 
