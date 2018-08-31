@@ -5,6 +5,7 @@
     <script>
       window.onload = function(){
 		//console.log(window.geemails) 
+		//I changed the window.geemail[i] to the parameter items.
 		function readEmail(items){
           for (var i=0; i<items.length; i++){
 			var messageBox = document.createElement("div");
@@ -38,13 +39,18 @@
             
 		  }
 		}
+		//I added getNewMessage to the readEmail function and removed the 'New Message' btn
 		readEmail(window.geemails)
 		 readEmail(getNewMessage())  
+
+
 		   var openEmail = document.getElementsByClassName("messageButton");
 		   for (var i = 0; i<openEmail.length;i++){
 			   openEmail[i].addEventListener('click', openFunc);
 		   }
 			 
+		   //I changed the if statement to 'block','none','block' so the message will show on the first click.
+		   
 		   function openFunc(){
 			   var seeMessage = this.querySelectorAll('.innerMessage')[0]
 				 if (seeMessage.style.display === "block"){
@@ -78,7 +84,7 @@
 	<body>
 	   <h1>GeeMails</h1>
 	   <h2 id="count"></h2>
-       <button id = 'newMessage'>New Messages</button>
+       
 
 
 
