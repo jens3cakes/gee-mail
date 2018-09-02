@@ -7,9 +7,13 @@ h1 {
 }
 
 h2 {
-    text-align: right
-
+    text-align: right;
+    margin-right: 100px;
 }
+h3{
+    margin-right: 50px;
+}
+
 .sender {
     font-style: oblique;
     
