@@ -78,16 +78,9 @@
 					}
 		
 					//console.log(getNewMessage())
-		var myVar = setInterval(yourVar(getNewMessage), 5000);
-		 
+		
 		function yourVar(item){
-			for (var i= 0; i<item.length; i++);
-			
-			var updateCount= document.getElementsByClassName('inbox');
-			updateCount.items++;
-            console.log(updateCount);
-
-		    var newWindow = document.createElement('div');
+			var newWindow = document.createElement('div');
 			newWindow.className="whoNow";
 			main.appendChild(newWindow);
 			
@@ -117,16 +110,13 @@
 			whatSendButton.appendChild(whatSend);
 			}	
 			
-		var openEmail = document.getElementsByClassName("messageButton");
-		   for (var i = 0; i<openEmail.length;i++){
-			    openEmail[i].addEventListener('click', openFunc);
+		var openEmailToo = document.getElementsByClassName("messageButton");
+		   for (var i = 0; i<openEmailToo.length;i++){
+			    openEmailToo[i].addEventListener('click', openFuncToo);
 			
 		   }
-			 
-		   //I changed the if statement to 'block','none','block' so the message will show on the first click.
-
-		   function openFunc(){
-			   var seeMessage = this.querySelectorAll('.innerMessage')[0]
+             function openFuncToo(){
+			   var seeMessage = this.querySelectorAll('.innerMessage')[1]
 				 if (seeMessage.style.display === "block"){
 					 seeMessage.style.display = "none";
 				 }else{
@@ -134,7 +124,8 @@
 				 }
 					}
 			
-		 
+					var myVar = setInterval(yourVar(getNewMessage), 5000,geemails.length++);
+		  
 
 
 		// ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
