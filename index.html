@@ -2,29 +2,30 @@
 	<head>
 		<script src="js/mail-generator.js"></script>
 		<link href="css/style.css" rel="stylesheet" media="screen">
+		<title>Geemail</title>
     <script>
       window.onload = function(){
 		//console.log(window.geemails) 
 		//I changed the window.geemail[i] to the parameter items.
 		
+
+
 		var emailCount = document.createElement('h2');
 		emailCount.innerHTML = "Message Count";
 		main.appendChild(emailCount);
 
 		var countNum = document.createElement('h3');
-		countNum.innerHTML = (window.geemails.length);
+		countNum.className = "inbox";
+		countNum.innerHTML = geemails.length;
 		emailCount.appendChild(countNum);
+		
+		
+	   //console.log()
+		
+		
+		//messageCount.innerHTML= ;
+		//emailCount.appendChild(messageCount);
 
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		function readEmail(items){
           for (var i=0; i<items.length; i++){
 			var messageBox = document.createElement("div");
@@ -55,8 +56,8 @@
 			    messageBox.className='innerMessage'
 			   messageBox.innerHTML=items[i].body;
 			   bodyBox.appendChild(messageBox);
-            
-		  }
+		   
+			}
 		}
 		readEmail(window.geemails)
 		 
@@ -76,12 +77,62 @@
 				 }
 					}
 		
-		var myVar = setInterval(yourVar, 5000);
-		
-		function yourVar(){
-			alert(window.getNewMessage[i]);
-		}
-					
+					//console.log(getNewMessage())
+		var myVar = setInterval(yourVar(getNewMessage), 5000);
+		 
+		function yourVar(item){
+			for (var i= 0; i<item.length; i++);
+			
+			var updateCount= document.getElementsByClassName('inbox');
+			updateCount.items++;
+            console.log(updateCount);
+
+		    var newWindow = document.createElement('div');
+			newWindow.className="whoNow";
+			main.appendChild(newWindow);
+			
+			var whoSend = document.createElement('ul');
+			whoSend.className = "sender"
+			whoSend.innerHTML=item(i).sender;
+			newWindow.appendChild(whoSend);
+			
+			var whenSend = document.createElement('ul');
+			whenSend.className=('date');
+			whenSend.innerHTML=item(i).date;
+			whoSend.appendChild(whenSend);
+
+			var whySend = document.createElement('ul');
+			whySend.className=('subject');
+			whySend.innerHTML=item(i).subject;
+			whoSend.appendChild(whySend);
+			
+			var whatSendButton = document.createElement('button');
+			whatSendButton.className=('messageButton');
+			whatSendButton.innerHTML= "Message:";
+			whoSend.appendChild(whatSendButton);
+
+			var whatSend = document.createElement('ul');
+			whatSend.className=('innerMessage');
+			whatSend.innerHTML=item(i).body;
+			whatSendButton.appendChild(whatSend);
+			}	
+			
+		var openEmail = document.getElementsByClassName("messageButton");
+		   for (var i = 0; i<openEmail.length;i++){
+			    openEmail[i].addEventListener('click', openFunc);
+			
+		   }
+			 
+		   //I changed the if statement to 'block','none','block' so the message will show on the first click.
+
+		   function openFunc(){
+			   var seeMessage = this.querySelectorAll('.innerMessage')[0]
+				 if (seeMessage.style.display === "block"){
+					 seeMessage.style.display = "none";
+				 }else{
+					 seeMessage.style.display = "block";
+				 }
+					}
 			
 		 
 
