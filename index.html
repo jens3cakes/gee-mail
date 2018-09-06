@@ -85,12 +85,12 @@
 		 whoSend.appendChild(whySend);
 		 
 		 var whatSendButton = document.createElement('button');
-		 whatSendButton.className='messageButton';
+		 whatSendButton.className='messageButtonNew';
 		 whatSendButton.innerHTML='Message'
 		 whoSend.appendChild(whatSendButton);
 
 		 var whatSend = document.createElement('ul');
-		 whatSend.className='innerMessage';
+		 whatSend.className='innerMessageNew';
 		 whatSend.innerHTML= item.body;
 		 whatSendButton.appendChild(whatSend);
 
@@ -100,7 +100,22 @@
 		 console.log(count)
 			}
 	     		 }
-         setInterval(yourVar(getNewMessage()),3000)
+		 setInterval(yourVar(getNewMessage()),3000)
+		 
+		 var readNewMail = document.getElementsByClassName('messageButtonNew');
+		 for (var i = 0; i<readNewMail.length; i++){
+			 readNewMail[i].addEventListener('click',openNewMail);
+		 }
+
+		 function openNewMail(){
+		   var seeNewMail = this.querySelectorAll('.innerMessageNew')[0];
+		   if (seeNewMail.style.display === 'block'){
+			   seeNewMail.style.display = 'none'
+		   }else{
+			   seeNewMail.style.display = 'block';
+		   }
+		   
+		 } 
 
 	   
 
