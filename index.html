@@ -62,8 +62,7 @@
 					 seeMessage.style.display = "block";
 				 }
 				}
-				var mailCount= document.getElementsByClassName('message');
-				countNum.innerHTML=mailCount.length
+				
                   
 				
                
@@ -82,23 +81,25 @@
 		 var whenSend = document.createElement('ul');
 		 whenSend.className='date';
 		 whenSend.innerHTML='Date: ' + newItems.date;
-		 whoSend.appendChild(whenSend);
+		 newMail.appendChild(whenSend);
 
 		 var whySend = document.createElement('ul');
 		 whySend.className='subject';
 		 whySend.innerHTML= newItems.subject;
-		 whoSend.appendChild(whySend);
+		 newMail.appendChild(whySend);
 		 
 		 var whatSendButton = document.createElement('button');
 		 whatSendButton.className='messageButtonNew';
 		 whatSendButton.innerHTML='Message'
-		 whoSend.appendChild(whatSendButton);
+		 newMail.appendChild(whatSendButton);
 
 		 var whatSend = document.createElement('ul');
 		 whatSend.className='innerMessageNew';
 		 whatSend.innerHTML= newItems.body;
 		 whatSendButton.appendChild(whatSend);
-		
+		 var mailCount= document.getElementsByClassName('message');
+				countNum.innerHTML=mailCount.length
+		 
 		  var readNewMail = document.getElementsByClassName('messageButtonNew');
 		 for (var i = 0; i<readNewMail.length; i++){
 			 readNewMail[i].addEventListener('click',openNewMail);
@@ -110,11 +111,16 @@
 			   seeNewMail.style.display = 'none'
 		   }else{
 			   seeNewMail.style.display = 'block';
-		   }
+		   
+			   //var mailCount= document.getElementsByClassName('message');
+				//countNum.innerHTML=mailCount.length
+				
+			}
 		}  
 		 } 
-		 //setInterval(yourVar,3000);
-		 
+		    
+		 setInterval(yourVar,3000);
+		      
 		 
 	   
 		// ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
