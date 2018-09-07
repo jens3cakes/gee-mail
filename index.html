@@ -90,6 +90,7 @@
 		 var whatSendButton = document.createElement('button');
 		 whatSendButton.className='messageButtonNew';
 		 whatSendButton.innerHTML='Message'
+		 whatSendButton.addEventListener('click',openNewMail)
 		 newMail.appendChild(whatSendButton);
 
 		 var whatSend = document.createElement('ul');
@@ -99,12 +100,8 @@
 		
 		 var mailCount= document.getElementsByClassName('message');
 			countNum.innerHTML=mailCount.length
+		}   
 		
-		
-		var readNewMail = document.getElementsByClassName('messageButtonNew');
-		   readNewMail.addEventListener('click',openNewMail);
-		   
-		}
 		 function openNewMail(){
 		   var seeNewMail = this.querySelectorAll('.innerMessageNew')[0];
 		   if (seeNewMail.style.display === 'block'){
