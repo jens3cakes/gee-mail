@@ -5,16 +5,14 @@
 		<title>Geemail</title>
     <script>
       window.onload = function(){
-		//console.log(window.geemails) 
-		//I changed the window.geemail[i] to the parameter items.
+		
 	    var emailCount = document.createElement('h2');
 		emailCount.innerHTML = "Inbox: ";
 		main.appendChild(emailCount);
 
 		var countNum = document.createElement('h3');
 		countNum.className = "inbox";
-		countNum.innerHTML = "";
-	    emailCount.appendChild(countNum);
+		emailCount.appendChild(countNum);
 		
 		function readEmail(items){
           for (var i=0; i<items.length; i++){
@@ -43,25 +41,26 @@
 			openMessageBox.appendChild(bodyBox)
 
 			var messageBox = document.createElement("ul");
-			    messageBox.className='innerMessage'
-			   messageBox.innerHTML=items[i].body;
-			   bodyBox.appendChild(messageBox);
+			messageBox.className='innerMessage'
+			messageBox.innerHTML=items[i].body;
+			bodyBox.appendChild(messageBox);
 		  }
 		}
 		   readEmail(geemails);
 	         var openEmail = document.getElementsByClassName("messageButton");
-		   for (var i = 0; i<openEmail.length;i++){
+		     for (var i = 0; i<openEmail.length;i++){
 			   openEmail[i].addEventListener('click', openFunc);
 		   }
 
 		   function openFunc(){
-			   var seeMessage = this.querySelectorAll('.innerMessage')[0]
-				 if (seeMessage.style.display === "block"){
-					 seeMessage.style.display = "none";
-				 }else{
-					 seeMessage.style.display = "block";
+			var seeMessage = this.querySelectorAll('.innerMessage')[0]
+			if (seeMessage.style.display === "block"){
+				seeMessage.style.display = "none";
+			}else{
+				seeMessage.style.display = "block";
 				 }
-				}
+				
+			}
 				
 				var mailCount= document.getElementsByClassName('message');
 				countNum.innerHTML=mailCount.length     
@@ -100,13 +99,13 @@
 		 whatSendButton.appendChild(whatSend);
 		
 		 var mailCount= document.getElementsByClassName('message');
-				countNum.innerHTML=mailCount.length
+			countNum.innerHTML=mailCount.length
 		
 		
 		var readNewMail = document.getElementsByClassName('messageButtonNew');
-		 for (var i = 0; i<readNewMail.length; i++){
+		   for (var i = 0; i<readNewMail.length; i++){
 			 readNewMail[i].addEventListener('click',openNewMail);
-		 }
+		   }
 		}
 		 function openNewMail(){
 		   var seeNewMail = this.querySelectorAll('.innerMessageNew')[0];
@@ -114,10 +113,7 @@
 			   seeNewMail.style.display = 'none'
 		   }else{
 			   seeNewMail.style.display = 'block';
-		   
-			   
-				
-			}
+		   }
 		}  
 	
 		    
@@ -133,7 +129,7 @@
 	</head>
 	<body>
 	   <h1>GeeMails</h1>
-	   <div id ='count'></div>
+	   
        
 
 
