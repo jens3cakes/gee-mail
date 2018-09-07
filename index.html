@@ -8,13 +8,13 @@
 		//console.log(window.geemails) 
 		//I changed the window.geemail[i] to the parameter items.
 	    var emailCount = document.createElement('h2');
-		emailCount.innerHTML = "Message Count";
+		emailCount.innerHTML = "Inbox: ";
 		main.appendChild(emailCount);
 
-		//var countNum = document.createElement('h3');
-		//countNum.className = "inbox";
-		//countNum.innerHTML = "";
-		//emailCount.appendChild(countNum);
+		var countNum = document.createElement('h3');
+		countNum.className = "inbox";
+		countNum.innerHTML = "";
+	    emailCount.appendChild(countNum);
 		
 		function readEmail(items){
           for (var i=0; i<items.length; i++){
@@ -62,11 +62,11 @@
 					 seeMessage.style.display = "block";
 				 }
 				}
-                function farts(){
-                  var mailCount= document.getElementsByClassName('sender');
-				mailCount.innerHTML=mailCount.length;
-				}
-               console.log(farts());
+				var mailCount= document.getElementsByClassName('message');
+				countNum.innerHTML=mailCount.length
+                  
+				
+               
 		function yourVar(){
 
 		var newItems=getNewMessage();
@@ -113,7 +113,7 @@
 		   }
 		}  
 		 } 
-		 setInterval(yourVar,3000);
+		 //setInterval(yourVar,3000);
 		 
 		 
 	   
