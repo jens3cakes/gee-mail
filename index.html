@@ -98,14 +98,16 @@
 		 whatSend.className='innerMessageNew';
 		 whatSend.innerHTML= newItems.body;
 		 whatSendButton.appendChild(whatSend);
+		
 		 var mailCount= document.getElementsByClassName('message');
 				countNum.innerHTML=mailCount.length
-		 
-		  var readNewMail = document.getElementsByClassName('messageButtonNew');
+		
+		
+		var readNewMail = document.getElementsByClassName('messageButtonNew');
 		 for (var i = 0; i<readNewMail.length; i++){
 			 readNewMail[i].addEventListener('click',openNewMail);
 		 }
-
+		}
 		 function openNewMail(){
 		   var seeNewMail = this.querySelectorAll('.innerMessageNew')[0];
 		   if (seeNewMail.style.display === 'block'){
@@ -113,12 +115,11 @@
 		   }else{
 			   seeNewMail.style.display = 'block';
 		   
-			   //var mailCount= document.getElementsByClassName('message');
-				//countNum.innerHTML=mailCount.length
+			   
 				
 			}
 		}  
-		 } 
+	
 		    
 		 setInterval(yourVar,3000);
 		      
