@@ -47,4 +47,4 @@
   window.getNewMessage = getNewMessage;
   loadGeeMails();	
 })();
-console.log("Hello World");
+

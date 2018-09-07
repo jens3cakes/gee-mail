@@ -44,14 +44,13 @@
 			messageBox.className='innerMessage'
 			messageBox.innerHTML=items[i].body;
 			bodyBox.appendChild(messageBox);
-		  }
-		}
-		   readEmail(geemails);
-	         var openEmail = document.getElementsByClassName("messageButton");
+		     }
+		   
+			 var openEmail = document.getElementsByClassName("messageButton");
 		     for (var i = 0; i<openEmail.length;i++){
 			   openEmail[i].addEventListener('click', openFunc);
-		   }
-
+		         }
+	    	}
 		   function openFunc(){
 			var seeMessage = this.querySelectorAll('.innerMessage')[0]
 			if (seeMessage.style.display === "block"){
@@ -59,8 +58,8 @@
 			}else{
 				seeMessage.style.display = "block";
 				 }
-				
-			}
+		   }
+		   readEmail(geemails);
 				
 				var mailCount= document.getElementsByClassName('message');
 				countNum.innerHTML=mailCount.length     
@@ -103,9 +102,8 @@
 		
 		
 		var readNewMail = document.getElementsByClassName('messageButtonNew');
-		   for (var i = 0; i<readNewMail.length; i++){
-			 readNewMail[i].addEventListener('click',openNewMail);
-		   }
+		   readNewMail.addEventListener('click',openNewMail);
+		   
 		}
 		 function openNewMail(){
 		   var seeNewMail = this.querySelectorAll('.innerMessageNew')[0];
