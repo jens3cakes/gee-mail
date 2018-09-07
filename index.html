@@ -11,36 +11,36 @@
 		emailCount.innerHTML = "Message Count";
 		main.appendChild(emailCount);
 
-		var countNum = document.createElement('h3');
-		countNum.className = "inbox";
-		countNum.innerHTML = geemails.length;
-		emailCount.appendChild(countNum);
+		//var countNum = document.createElement('h3');
+		//countNum.className = "inbox";
+		//countNum.innerHTML = "";
+		//emailCount.appendChild(countNum);
 		
 		function readEmail(items){
           for (var i=0; i<items.length; i++){
-			var messageBox = document.createElement("div");
-				messageBox.className = "message";
-                main.appendChild(messageBox);    
+			var openMessageBox = document.createElement("div");
+				openMessageBox.className = "message";
+                main.appendChild(openMessageBox);    
 
             var senderBox = document.createElement("ul");
             senderBox.className = "sender";
             senderBox.innerHTML = "Sender: " + items[i].sender;
-            messageBox.appendChild(senderBox);
+            openMessageBox.appendChild(senderBox);
 
             var subjectBox = document.createElement("ul");
             subjectBox.className = "subject";
             subjectBox.innerHTML = "Subject: " + items[i].subject;
-            senderBox.appendChild(subjectBox);
+            openMessageBox.appendChild(subjectBox);
 
             var dateBox = document.createElement("ul");
             dateBox.className = "date";
             dateBox.innerHTML = "Date: " + items[i].date;
-			senderBox.appendChild(dateBox);
+			openMessageBox.appendChild(dateBox);
 
 			var bodyBox = document.createElement('button');
 			bodyBox.className = "messageButton";
 			bodyBox.innerHTML='Message';
-			senderBox.appendChild(bodyBox)
+			openMessageBox.appendChild(bodyBox)
 
 			var messageBox = document.createElement("ul");
 			    messageBox.className='innerMessage'
@@ -62,45 +62,48 @@
 					 seeMessage.style.display = "block";
 				 }
 				}
+ 
+				var mailCount= document.getElementsByClassName('message');
+				console.log(mailCount.length);
+				//count.appendChild(mailCount.lenth);
+
+				
 		
-		 
-     	function yourVar(item){
+		 function yourVar(){
+
+		var newItems=getNewMessage();
 	   	var newMail = document.createElement('div');
-		newMail.className='newMessage';
+		newMail.className='message';
 		main.appendChild(newMail);
 
 		 var whoSend = document.createElement('ul');
 		 whoSend.className='sender';
-		 whoSend.innerHTML= 'Sender: ' + item.sender;
+		 whoSend.innerHTML= 'Sender: ' + newItems.sender;
 		 newMail.appendChild(whoSend);
 
 		 var whenSend = document.createElement('ul');
 		 whenSend.className='date';
-		 whenSend.innerHTML='Date: ' + item.date;
-		 whoSend.appendChild(whenSend);
+		 whenSend.innerHTML='Date: ' + newItems.date;
+		 newMail.appendChild(whenSend);
 
 		 var whySend = document.createElement('ul');
 		 whySend.className='subject';
-		 whySend.innerHTML=item.subject;
-		 whoSend.appendChild(whySend);
+		 whySend.innerHTML= newItems.subject;
+		 newMail.appendChild(whySend);
 		 
 		 var whatSendButton = document.createElement('button');
 		 whatSendButton.className='messageButtonNew';
 		 whatSendButton.innerHTML='Message'
-		 whoSend.appendChild(whatSendButton);
+		 newMail.appendChild(whatSendButton);
 
 		 var whatSend = document.createElement('ul');
 		 whatSend.className='innerMessageNew';
-		 whatSend.innerHTML= item.body;
+		 whatSend.innerHTML= newItems.body;
 		 whatSendButton.appendChild(whatSend);
-
-		 var count=10
-		 function upDate(){
-			 count++;
-		 console.log(count)
-			}
-	     		 }
-		 setInterval(yourVar(getNewMessage()),3000)
+		
+		 
+		}
+		  
 		 
 		 var readNewMail = document.getElementsByClassName('messageButtonNew');
 		 for (var i = 0; i<readNewMail.length; i++){
@@ -116,9 +119,10 @@
 		   }
 		   
 		 } 
-
+		 setInterval(yourVar,3000);
+		 
+		 
 	   
-
 		// ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
 				// We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser			
 	  
@@ -127,7 +131,7 @@
 	</head>
 	<body>
 	   <h1>GeeMails</h1>
-	   <h2 id="count"></h2>
+	   <div id ='count'></div>
        
 
 
