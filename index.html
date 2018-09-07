@@ -62,14 +62,12 @@
 					 seeMessage.style.display = "block";
 				 }
 				}
- 
-				var mailCount= document.getElementsByClassName('message');
-				console.log(mailCount.length);
-				//count.appendChild(mailCount.lenth);
-
-				
-		
-		 function yourVar(){
+                function farts(){
+                  var mailCount= document.getElementsByClassName('sender');
+				mailCount.innerHTML=mailCount.length;
+				}
+               console.log(farts());
+		function yourVar(){
 
 		var newItems=getNewMessage();
 	   	var newMail = document.createElement('div');
@@ -84,28 +82,24 @@
 		 var whenSend = document.createElement('ul');
 		 whenSend.className='date';
 		 whenSend.innerHTML='Date: ' + newItems.date;
-		 newMail.appendChild(whenSend);
+		 whoSend.appendChild(whenSend);
 
 		 var whySend = document.createElement('ul');
 		 whySend.className='subject';
 		 whySend.innerHTML= newItems.subject;
-		 newMail.appendChild(whySend);
+		 whoSend.appendChild(whySend);
 		 
 		 var whatSendButton = document.createElement('button');
 		 whatSendButton.className='messageButtonNew';
 		 whatSendButton.innerHTML='Message'
-		 newMail.appendChild(whatSendButton);
+		 whoSend.appendChild(whatSendButton);
 
 		 var whatSend = document.createElement('ul');
 		 whatSend.className='innerMessageNew';
 		 whatSend.innerHTML= newItems.body;
 		 whatSendButton.appendChild(whatSend);
 		
-		 
-		}
-		  
-		 
-		 var readNewMail = document.getElementsByClassName('messageButtonNew');
+		  var readNewMail = document.getElementsByClassName('messageButtonNew');
 		 for (var i = 0; i<readNewMail.length; i++){
 			 readNewMail[i].addEventListener('click',openNewMail);
 		 }
@@ -117,7 +111,7 @@
 		   }else{
 			   seeNewMail.style.display = 'block';
 		   }
-		   
+		}  
 		 } 
 		 setInterval(yourVar,3000);
 		 
